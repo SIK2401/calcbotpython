@@ -34,18 +34,19 @@ async def on_message(message):
                 Person =  float(CountNum[0])
                 prise = float(CountNum[1])
        
-                if (Person == 0):
-                    Person =1
-                FCost = prise * 0.95;
-                FinalCost = ((FCost * Person) - FCost) / Person
-                TCost = int(FinalCost)         
-                FinalCost2 = (FCost) / Person
-                ICost = int(FinalCost2)
-                BCost = int(FinalCost * 0.9)
+                if (Person > 1):
+                    FCost = prise * 0.95;
+                    FinalCost = ((FCost * Person) - FCost) / Person
+                    TCost = int(FinalCost)         
+                    FinalCost2 = (FCost) / Person
+                    ICost = int(FinalCost2)
+                    BCost = int(FinalCost * 0.9)
       
-                embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + " \n\n" +"1입찰이득 : " +  f'{BCost}' + " \n\n" , color = 0xffc0cb)
-                await channel.send(embed = embed)
-       
+                    embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + " \n\n" +"1입찰이득 : " +  f'{BCost}' + " \n\n" , color = 0xffc0cb)
+                    await channel.send(embed = embed)
+                else :
+                    embed = discord.Embed(title = "Error", description = "%[인원] [금액] \n\n" +"ex) 8인 2000원 일때 \n\n" +"%8 2000 \n\n" , color = 0xffc0cb)
+                    await channel.send(embed = embed)
             except :
                 embed = discord.Embed(title = "Error", description = "%[인원] [금액] \n\n" +"ex) 8인 2000원 일때 \n\n" +"%8 2000 \n\n" , color = 0xffc0cb)
                 await channel.send(embed = embed)
