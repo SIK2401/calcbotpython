@@ -10,7 +10,7 @@ ertxt = "Error - %[인원] [금액] ex) 8인 2000원 일때 -> %8 2000"
 @bot.event
 async def on_ready():
     await bot.change_presence(status=discord.Status.online) #온라인\
-    await bot.change_presence(activity=discord.Game(name="우다윤은 먹는중"))
+    await bot.change_presence(activity=discord.Game(name="우다윤은 식사"))
     print("We have loggedd in as {0.user}".format(bot))
 
 
