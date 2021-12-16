@@ -34,13 +34,20 @@ async def on_message(message):
                 Person =  float(CountNum[0])
                 prise = float(CountNum[1])
        
-                if (Person > 1):
+                if (Person > 1 and prise>0):
                     FCost = prise * 0.95;
                     FinalCost = ((FCost * Person) - FCost) / Person
                     TCost = int(FinalCost)         
                     FinalCost2 = (FCost) / Person
                     ICost = int(FinalCost2)
-                    BCost = int(FinalCost * 0.9)
+                    BCost = int(FinalCost * 0.9)   
+
+                    if(TCost < 1):
+                        TCost = 1
+                    if(ICost < 1):
+                        ICost = 1
+                    if(BCost < 1):
+                        BCost = 1
       
                     embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + " \n\n" +"1입찰이득 : " +  f'{BCost}' + " \n\n" , color = 0xffc0cb)
                     await channel.send(embed = embed)
