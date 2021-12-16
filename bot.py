@@ -34,7 +34,7 @@ async def on_message(message):
                 Person =  float(CountNum[0])
                 prise = float(CountNum[1])
        
-                if (Person > 1 and prise>0):
+                if (Person > 1 and prise>1):
                     FCost = prise * 0.95;
                     FinalCost = ((FCost * Person) - FCost) / Person
                     TCost = int(FinalCost)         
