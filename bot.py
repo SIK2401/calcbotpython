@@ -42,14 +42,13 @@ async def on_message(message):
                     ICost = int(FinalCost2)
                     BCost = int(FinalCost * 0.9)   
 
-                    if(TCost < 1):
-                        TCost = 1
+                    
+                    
                     if(ICost < 1):
                         ICost = 1
-                    if(BCost < 1):
-                        BCost = 1
+                    
       
-                    embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + " \n\n" +"1입찰이득 : " +  f'{BCost}' + " \n\n" , color = 0xffc0cb)
+                    embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + " \n\n" +"1입찰이득 : " +  f'{BCost}' + " \n\n" , color = 0x00ffff)
                     await channel.send(embed = embed)
                 else :
                     embed = discord.Embed(title = "Error", description = "%[인원] [금액] \n\n" +"ex) 8인 2000원 일때 \n\n" +"%8 2000 \n\n" , color = 0xffc0cb)
