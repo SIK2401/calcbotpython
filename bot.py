@@ -63,7 +63,7 @@ async def on_message(message):
                 strmsg = "저요 저요 제발 저요"                
             else:
                 if(name[1].find('던') >-1 and name[1].find('바')>-1):
-                    strmsg = "이이이이잉"
+                    strmsg = "이이이이이잉"
                 else:
                     strmsg = "저요"
            
