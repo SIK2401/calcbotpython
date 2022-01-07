@@ -31,17 +31,17 @@ async def on_message(message):
             CountNum = commandr[1].split()
        
             try:
-                Person =  float(CountNum[0])-1
+                Person =  float(CountNum[0])
                 prise = float(CountNum[1])
        
                 if (Person >= 1 and prise>1):
                     FCost = prise * 0.95;
                     FinalCost = ((FCost * Person) - FCost) / Person
                     TCost = int(FinalCost)         
-                    FinalCost2 = (FCost) / Person
+                    FinalCost2 = (FCost) / (Person-1)
                     ICost = int(FinalCost2)
                     BCost = int(FinalCost * 0.93)
-                    Bdistutor =    BCost/ Person
+                    Bdistutor =    BCost/ (Person-1)
 
                     
                     
