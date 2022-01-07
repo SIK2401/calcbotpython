@@ -38,9 +38,9 @@ async def on_message(message):
                     FCost = prise * 0.95;
                     FinalCost = ((FCost * Person) - FCost) / Person
                     TCost = int(FinalCost)         
-                    FinalCost2 = (FCost) / (Person-1)
+                    FinalCost2 = (TCost) / (Person-1)
                     ICost = int(FinalCost2)
-                    BCost = int(FinalCost * 0.93)
+                    BCost = int(TCost * 0.92)
                     Bdistutor =    int(BCost/ (Person-1))
 
                     
