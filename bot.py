@@ -31,16 +31,17 @@ async def on_message(message):
             CountNum = commandr[1].split()
        
             try:
-                Person =  float(CountNum[0])
+                Person =  float(CountNum[0])-1
                 prise = float(CountNum[1])
        
-                if (Person > 1 and prise>1):
+                if (Person >= 1 and prise>1):
                     FCost = prise * 0.95;
                     FinalCost = ((FCost * Person) - FCost) / Person
                     TCost = int(FinalCost)         
                     FinalCost2 = (FCost) / Person
                     ICost = int(FinalCost2)
-                    BCost = int(FinalCost * 0.93)   
+                    BCost = int(FinalCost * 0.93)
+                    Bdistutor =    BCost/ Person
 
                     
                     
@@ -48,7 +49,8 @@ async def on_message(message):
                         ICost = 1
                     
       
-                    embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + " \n\n" +"1입찰이득 : " +  f'{BCost}' + " \n\n" , color = 0x00ffff)
+                    embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + 
+                                        " \n\n" +"공팟가 : " +  f'{BCost}' + " \n\n" +"공팟가분배금 : " +  f'{Bdistutor}' +" \n\n" , color = 0x00ffff)
                     await channel.send(embed = embed)
                 else :
                     embed = discord.Embed(title = "Error", description = "%[인원] [금액] \n\n" +"ex) 8인 2000원 일때 \n\n" +"%8 2000 \n\n" , color = 0xffc0cb)
