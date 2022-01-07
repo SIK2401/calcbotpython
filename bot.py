@@ -40,7 +40,7 @@ async def on_message(message):
                     TCost = int(FinalCost)         
                     FinalCost2 = (FCost) / Person
                     ICost = int(FinalCost2)
-                    BCost = int(FinalCost * 0.9)   
+                    BCost = int(FinalCost * 0.93)   
 
                     
                     
