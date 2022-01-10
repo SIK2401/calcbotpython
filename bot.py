@@ -62,7 +62,7 @@ async def on_message(message):
             name = message.content.split(sttxt)  
             strmsg = "저요"
             if(name[1].find('다')>-1 and name[1].find('윤')>-1):
-                strmsg = "저요 저요 제발 저요"                
+                strmsg = "저요 저요 이이이이잉 저요"                
             else:
                 if(name[1].find('던') >-1 and name[1].find('바')>-1):
                     strmsg = "이이이이이잉"
