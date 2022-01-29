@@ -44,7 +44,7 @@ async def on_message(message):
                     Bdistutor =    int(BCost/ (Person-1))                    
                     
                     if(ICost < 1):
-                        ICost = 1                    
+                        ICost = 1                     
       
                     embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + 
                                         " \n\n" +"공팟가 : " +  f'{BCost}' + " \n\n" +"공팟가분배금 : " +  f'{Bdistutor}' +" \n\n" , color = 0x00ffff)
