@@ -42,7 +42,7 @@ async def on_message(message):
                     ICost = int(FinalCost2)
                     BCost = int(TCost / 1.08)
                     Bdistutor =    int(BCost/ (Person-1))                    
-                    
+                     
                     if(ICost < 1):
                         ICost = 1                     
       
