@@ -66,6 +66,7 @@ async def on_message(message):
                 else:
                     strmsg = "저요"
            
+           
             await channel.send(strmsg)
 
       
