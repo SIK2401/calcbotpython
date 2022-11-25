@@ -4,7 +4,7 @@ import os
 sttxt = "%"
 bot = commands.Bot(command_prefix=sttxt)
 
-ertxt = "Error - %[인원] [금액] ex) 8인 2000원 일때 -> %8 2000"
+ertxt = "Error - %[금액] ex)2000원 일때 ->%2000"
 
 
 @bot.event
@@ -31,29 +31,39 @@ async def on_message(message):
             CountNum = commandr[1].split()
        
             try:
-                Person =  float(CountNum[0])
+                Person1 =  4.0;
+                Person2 =  8.0;
                 prise = float(CountNum[1])
        
-                if (Person >= 1 and prise>1):
+                if (prise>1):
                     FCost = prise * 0.95;
-                    FinalCost = ((FCost * Person) - FCost) / Person
-                    TCost = int(FinalCost)         
-                    FinalCost2 = (TCost) / (Person-1)
-                    ICost = int(FinalCost2)
-                    BCost = int(TCost / 1.08)
-                    Bdistutor =    int(BCost/ (Person-1))                    
+                    FinalCost1 = ((FCost * Person1) - FCost) / Person1
+                    TCost1 = int(FinalCost1)  
+                    FinalCost2 = ((FCost * Person2) - FCost) / Person2
+                    TCost2 = int(FinalCost2) 
+                    FinalCost1_2 = (TCost1) / (Person1-1)
+                    FinalCost2_2 = (TCost2) / (Person2-1)
+                    ICost1 = int(FinalCost1_2)
+                    BCost1 = int(TCost1 / 1.08)
+                    Bdistutor1 =    int(BCost1/ (Person1-1))
+                    ICost2 = int(FinalCost2_2)
+                    BCost2 = int(TCost2 / 1.08)
+                    Bdistutor2 =    int(BCost2/ (Person2-1))      
                      
-                    if(ICost < 1):
-                        ICost = 1                     
-      
-                    embed = discord.Embed(title = "결과", description = "손익분기 : " +  f'{TCost}' + " \n\n" +"분배금 : " +  f'{ICost}' + 
-                                        " \n\n" +"공팟가 : " +  f'{BCost}' + " \n\n" +"공팟가분배금 : " +  f'{Bdistutor}' +" \n\n" , color = 0x00ffff)
+                    if(ICost1 < 1):
+                        ICost1 = 1                     
+                    if(ICost2 < 1):
+                        ICost2 = 1  
+                    embed = discord.Embed(title = "결과", description = "4인 : " +  f'{TCost1}' + " \n\n" +"분배금 : " +  f'{ICost1}' +  "공팟가 : " +  f'{BCost1}' + " \n\n" +
+                                                                        "8인 : " +  f'{TCost2}' + " \n\n" +"분배금 : " +  f'{ICost2}' +  "공팟가 : " +  f'{BCost2}' + " \n\n" + , color = 0x00ffff)
                     await channel.send(embed = embed)
                 else :
-                    embed = discord.Embed(title = "Error", description = "%[인원] [금액] \n\n" +"ex) 8인 2000원 일때 \n\n" +"%8 2000 \n\n" , color = 0xffc0cb)
+                    embed = discord.Embed(title = "Error", description = "%[금액] \n\n" +"ex)2000원 일때 \n\n" +"%2000 \n\n" , color = 0xffc0cb)
                     await channel.send(embed = embed)
+                    
+                    
             except :
-                embed = discord.Embed(title = "Error", description = "%[인원] [금액] \n\n" +"ex) 8인 2000원 일때 \n\n" +"%8 2000 \n\n" , color = 0xffc0cb)
+                embed = discord.Embed(title = "Error", description = "%[금액] \n\n" +"ex) 2000원 일때 \n\n" +"%2000 \n\n" , color = 0xffc0cb)
                 await channel.send(embed = embed)
         else :
             name = message.content.split(sttxt)  
